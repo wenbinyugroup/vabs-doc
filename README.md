@@ -1,2 +1,3 @@
-# vabs-doc
+# VABS-Doc
+
 VABS documentation
