@@ -19,6 +19,8 @@ extensions = [
     'myst_parser',
     "sphinx.ext.githubpages",
     'sphinx_immaterial',
+    'sphinxcontrib.bibtex',
+    'sphinx_markdown_builder',
 ]
 
 templates_path = ['_templates']
@@ -30,6 +32,15 @@ source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
+
+numfig = True
+numfig_format = {
+    'figure': 'Figure %s',
+    'table': 'Table %s',
+    'code-block': 'Listing %s',
+    'section': 'Section'}
+
+bibtex_bibfiles = ['refs.bib']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -54,3 +65,9 @@ html_theme_options = {
     # 'navigation_depth': 4,
     # "announcement": "Documentation is under construction.",
 }
+
+myst_enable_extensions = [
+    "colon_fence",
+    "dollarmath",
+    "amsmath"
+]

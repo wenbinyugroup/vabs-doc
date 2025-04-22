@@ -85,7 +85,7 @@ Quite a few bugs in VABS 2.1.1 have been corrected in VABS III and its later ver
 
 Starting from VABS 3.0, an evaluation version of VABS is free for anybody who asks. It allows the user to evaluate the code for one month before obtaining a permanent license.
 
-## 3.11 VABS II
+## VABS II
 
 VABS II was released in June 2004, with the major enhancement to remove the need of asking the user to choose arbitrary point constraints and let the code determine the singularity and apply the corresponding constraints. Other improvements of VABS II include calculation of principal inertial axes, the mass matrix, and neutral axes, and a significant reduction of the computing time for large size problems.
 

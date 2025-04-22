@@ -1,6 +1,6 @@
 # Introduction
 
-VABS[^1] (Variational Asymptotic Beam Sectional Analysis) is a code implementing the beam theories[^hodges1992simplified] based on the concept of simplifying the original nonlinear three-dimensional (3D) analysis of slender structures into a two-dimensional (2D) cross-sectional analysis and a one-dimensional (1D) nonlinear beam analysis using the variational asymptotic method.[25]
+VABS[^1] (Variational Asymptotic Beam Sectional Analysis) is a code implementing the beam theories{cite}`hodges1992simplified` based on the concept of simplifying the original nonlinear three-dimensional (3D) analysis of slender structures into a two-dimensional (2D) cross-sectional analysis and a one-dimensional (1D) nonlinear beam analysis using the variational asymptotic method.[25]
 
 VABS takes a finite element mesh of the cross-section including all the details of geometry and material as inputs to perform a homogenization analysis to compute sectional properties including inertial properties and structural properties.
 These properties are needed for the 1D beam analysis to predict the global behavior of slender structures.
