@@ -1,0 +1,12 @@
+sphinx
+sphinx-comments
+sphinx-sitemap
+sphinx-design
+sphinx-gallery
+pydata-sphinx-theme
+sphinx-immaterial
+sphinx-prompt
+sphinx-copybutton
+sphinx-markdown-builder
+sphinxcontrib-bibtex
+myst-parser

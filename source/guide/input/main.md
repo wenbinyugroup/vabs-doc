@@ -1,5 +1,7 @@
 # Homogenization Input File
 
+## Control parameters
+
 The first line lists two newly introduced integer flags arranged as:
 ```
 format_flag  nlayer
@@ -46,6 +48,10 @@ Their uses are explained in the following:
 3. To obtain the trapeze effect, `trapeze_flag` is 1.
 4. To obtain the Vlasov model, `Vlasov_flag` is 1. `Vlasov_flag` can be 1 only if `Timoshenko_flag` is 1. VABS will first construct the Timoshenko model, which determines the location of the shear center. If the shear center is not at the origin of the beam coordinate system, VABS will move the origin of beam coordinate system to the shear center and repeat the calculation to obtain the Vlasov model.
 
+
+
+## Mesh
+
 The next line lists three integers arranged as
 
 ```
@@ -73,6 +79,9 @@ If a node is not present in the element, the value is 0.
 If `node_4` is 0, the element is a triangular element; see {numref}`fig-tri_elem` and {numref}`fig-quad_elem` for the VABS numbering convention.
 Although the arrangement of elem no is not necessary to be consecutive, every element starting from 1 to nelem should be present.
 
+
+## Element property and orientation
+
 If `format_flag = 1`, that is, if the new format is used, the next `nelem` lines list the layer type and the layer plane angle ($\theta_1$) for each element as:
 ```
 elem_no  layer_type  theta_1
@@ -91,6 +100,9 @@ For simplification, if the ply orientation can be considered as uniform for this
 If the element has fewer than nine nodes, zeros are to be input for the corresponding missing nodes, as in the case for connectivity.
 Although the arrangement of `elem_no` is not necessary to be consecutive, every element starting from 1 to `nelem` should be present.
 For isotropic materials, neither `theta_3` nor `theta_1(9)` will enter the calculations.
+
+
+## Materials and layers
 
 If `format_flag` = 1, that is, if the new format is used, the next `nlayer` lines define the layers used in the section.
 They are arranged as:
