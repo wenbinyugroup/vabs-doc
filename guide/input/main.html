@@ -1,0 +1,856 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>Homogenization Input File - VABS  documentation</title>
+      
+    
+    
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../../_static/sphinx_immaterial_theme.930bea4bcf70699cc.min.css?v=c6f00d5f" />
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#control-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="VABS  documentation" class="md-header__button md-logo" aria-label="VABS  documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VABS  documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Homogenization Input File
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="VABS  documentation" class="md-nav__button md-logo" aria-label="VABS  documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    VABS  documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro.html" class="md-nav__link">
+        <span class="md-ellipsis">Introduction</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install.html" class="md-nav__link">
+        <span class="md-ellipsis">Installation</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run.html" class="md-nav__link">
+        <span class="md-ellipsis">Execution</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../index.html"><span class="md-ellipsis">Guide</span></a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Guide</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convention.html" class="md-nav__link">
+        <span class="md-ellipsis">Conventions</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html"><span class="md-ellipsis">Inputs</span></a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Inputs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Inputs</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">Homogenization Input File</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">Homogenization Input File</span>
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Control parameters</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh" class="md-nav__link">
+    <span class="md-ellipsis">Mesh</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-property-and-orientation" class="md-nav__link">
+    <span class="md-ellipsis">Element property and orientation</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-layers" class="md-nav__link">
+    <span class="md-ellipsis">Materials and layers</span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="global.html" class="md-nav__link">
+        <span class="md-ellipsis">Dehomogenization Input File</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ufc.html" class="md-nav__link">
+        <span class="md-ellipsis">User-<wbr>defined Failure Criterion</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Outputs</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog.html" class="md-nav__link">
+        <span class="md-ellipsis">Changelog</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/bib.html" class="md-nav__link">
+        <span class="md-ellipsis">References</span>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Control parameters</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh" class="md-nav__link">
+    <span class="md-ellipsis">Mesh</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-property-and-orientation" class="md-nav__link">
+    <span class="md-ellipsis">Element property and orientation</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-layers" class="md-nav__link">
+    <span class="md-ellipsis">Materials and layers</span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                  
+
+
+<h1 id="homogenization-input-file">Homogenization Input File<a class="headerlink" href="#homogenization-input-file" title="Link to this heading">¶</a></h1>
+<h2 id="control-parameters">Control parameters<a class="headerlink" href="#control-parameters" title="Link to this heading">¶</a></h2>
+<p>The first line lists two newly introduced integer flags arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">format_flag</span>  <span class="n">nlayer</span>
+</code></pre></div>
+</div>
+<p>If the first flag is 1, the input is prepared in the new format, otherwise, it is prepared in the old format.
+The second integer provides the number of layers in the section.
+Note, here layer is defined as a unique combination of material type and layup orientation, it does not necessarily corresponds to the definition used in the manufacturing sense.
+For example, even if a section is made of a single isotropic material, we consider it has one layer.
+Hence, nlayer should be always given a value greater than 1 if <code class="docutils literal notranslate"><span class="pre">format</span> <span class="pre">flag=1</span></code> and it is not used when using the old format.</p>
+<p>The second line has two flags arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">Timoshenko_flag</span>  <span class="n">damping_flag</span>  <span class="n">thermal_flag</span>
+</code></pre></div>
+</div>
+<p>The first flag, <code class="docutils literal notranslate"><span class="pre">Timoshenko_flag</span></code>, can be only 1 or 0.
+If it is 1, VABS will construct both the classical model (also called the Euler-Bernoulli model) and the Timoshenko model.
+If it is 0, it will only construct the classical model.
+The second flag, <code class="docutils literal notranslate"><span class="pre">damping_flag</span></code>, can be equal to 0 or 1.
+If it is equal to 0, VABS will not compute the damping matrix for the section.
+If it is equal to 1, VABS will compute the damping matrix.
+The third flag, <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code>, can be equal to 0 or 3.
+If it is equal to zero, VABS will carry out a pure mechanical analysis.
+If it is equal to 3, VABS will carry out a one-way coupled thermoelastic analysis.</p>
+<figure class="align-default" id="fig-oblique">
+<img alt="" src="../../_images/oblique.jpeg" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text"><span class="caption-text">
+Sketch of an oblique reference cross-section</span><a class="headerlink" href="#fig-oblique" title="Permalink to this image">¶</a></figcaption>
+</figure>
+<p>The third line has four flags arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">curve_flag</span> <span class="n">oblique_flag</span> <span class="n">trapeze_flag</span> <span class="n">Vlasov_flag</span>
+</code></pre></div>
+</div>
+<p>These flags can be only 1 or 0.
+Their uses are explained in the following:</p>
+<ol class="arabic simple">
+<li><p>To model initially curved and twisted beams, <code class="docutils literal notranslate"><span class="pre">curve_flag</span></code> is 1, and three real numbers for the twist (<span class="math notranslate nohighlight">\(k_1\)</span>) and curvatures (<span class="math notranslate nohighlight">\(k_2\)</span> and <span class="math notranslate nohighlight">\(k_3\)</span>) should be provided in the very next line.</p></li>
+<li><p>To model oblique cross-sections, <code class="docutils literal notranslate"><span class="pre">oblique_flag</span></code> is 1, and two real numbers are needed in the following line to specify the orientation of an oblique reference cross-section, see <a class="reference internal" href="#fig-oblique"><span class="std std-numref">Figure 6</span></a> for a sketch of such a cross-section. The first number is cosine of the angle between normal of the oblique section (<span class="math notranslate nohighlight">\(y_1\)</span>) and beam axis <span class="math notranslate nohighlight">\(x_1\)</span>. The second number is cosine of the angle between <span class="math notranslate nohighlight">\(y_2\)</span> of the oblique section and beam axis (<span class="math notranslate nohighlight">\(x_1\)</span>). The summation of the square of these two numbers should not be greater than 1.0 in double precision. The inputs including coordinates, material properties, etc. and the outputs including mass matrix, stiffness matrix, etc. are given in the oblique system, the <span class="math notranslate nohighlight">\(y_i\)</span> coordinate system as shown in <a class="reference internal" href="#fig-oblique"><span class="std std-numref">Figure 6</span></a> Note that this feature is only enabled for the classical beam model.</p></li>
+<li><p>To obtain the trapeze effect, <code class="docutils literal notranslate"><span class="pre">trapeze_flag</span></code> is 1.</p></li>
+<li><p>To obtain the Vlasov model, <code class="docutils literal notranslate"><span class="pre">Vlasov_flag</span></code> is 1. <code class="docutils literal notranslate"><span class="pre">Vlasov_flag</span></code> can be 1 only if <code class="docutils literal notranslate"><span class="pre">Timoshenko_flag</span></code> is 1. VABS will first construct the Timoshenko model, which determines the location of the shear center. If the shear center is not at the origin of the beam coordinate system, VABS will move the origin of beam coordinate system to the shear center and repeat the calculation to obtain the Vlasov model.</p></li>
+</ol>
+<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Link to this heading">¶</a></h2>
+<p>The next line lists three integers arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">nnode</span> <span class="n">nelem</span> <span class="n">nmate</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">nnode</span></code> is the total number of nodes, <code class="docutils literal notranslate"><span class="pre">nelem</span></code> the total number of elements, and <code class="docutils literal notranslate"><span class="pre">nmate</span></code> the total number of material types.</p>
+<p>The next nnode lines are the coordinates for each node arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">node_no</span> <span class="n">x2</span> <span class="n">x3</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">node_no</span></code> is an integer representing the unique number assigned to each node and <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">x3</span></code> are two real numbers describing the location (<span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span>) of the node.
+Although the arrangement of node no is not necessary to be consecutive, every node starting from 1 to nnode should be present.</p>
+<p>The next <code class="docutils literal notranslate"><span class="pre">nelem</span></code> lines list 10 integers for the nodes for each element (also known as the connectivity relations).
+They are arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">elem_no</span> <span class="n">node_1</span> <span class="n">node_2</span> <span class="n">node_3</span> <span class="n">node_4</span> <span class="n">node_5</span> <span class="n">node_6</span> <span class="n">node_7</span> <span class="n">node_8</span> <span class="n">node_9</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">elem_no</span></code> is the number of element and <code class="docutils literal notranslate"><span class="pre">node_i</span></code> (i = 1, 2, … , 9) are nodes of this element.
+If a node is not present in the element, the value is 0.
+If <code class="docutils literal notranslate"><span class="pre">node_4</span></code> is 0, the element is a triangular element; see <a class="reference internal" href="../convention.html#fig-tri-elem"><span class="std std-numref">Figure 2</span></a> and <a class="reference internal" href="../convention.html#fig-quad-elem"><span class="std std-numref">Figure 3</span></a> for the VABS numbering convention.
+Although the arrangement of elem no is not necessary to be consecutive, every element starting from 1 to nelem should be present.</p>
+<h2 id="element-property-and-orientation">Element property and orientation<a class="headerlink" href="#element-property-and-orientation" title="Link to this heading">¶</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">format_flag</span> <span class="pre">=</span> <span class="pre">1</span></code>, that is, if the new format is used, the next <code class="docutils literal notranslate"><span class="pre">nelem</span></code> lines list the layer type and the layer plane angle (<span class="math notranslate nohighlight">\(\theta_1\)</span>) for each element as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">elem_no</span>  <span class="n">layer_type</span>  <span class="n">theta_1</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">layer_type</span></code> is an integer representing which layer the element <code class="docutils literal notranslate"><span class="pre">elem_no</span></code> belongs to, and <code class="docutils literal notranslate"><span class="pre">theta_1</span></code> is a real number describing the layer plane angle (<span class="math notranslate nohighlight">\(\theta_1\)</span>) for the element.
+Here, <span class="math notranslate nohighlight">\(\theta_1\)</span> is assumed to be constant for each element, thus it can be calculated at any material point belonging to the element, such as the centroid, or computed as the average of <span class="math notranslate nohighlight">\(\theta_1\)</span> of all the points within the element.
+Although the arrangement of <code class="docutils literal notranslate"><span class="pre">elem_no</span></code> is not necessary to be consecutive, every element starting from 1 to <code class="docutils literal notranslate"><span class="pre">nelem</span></code> should be present.
+For isotropic materials, <code class="docutils literal notranslate"><span class="pre">theta_1</span></code> will not enter the calculations.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">format_flag</span></code> is not equal to 1, that is, if the old format is used, the next <code class="docutils literal notranslate"><span class="pre">nelem</span></code> lines list the material type and layup parameters for each element as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">elem_no</span>  <span class="n">material_type</span>  <span class="n">theta_3</span>  <span class="n">theta_1</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">material_type</span></code> is an integer representing the type of the material for the element <code class="docutils literal notranslate"><span class="pre">elem_no</span></code>, <code class="docutils literal notranslate"><span class="pre">theta_3</span></code> is a real number representing the layup angle in degrees for this element, and <code class="docutils literal notranslate"><span class="pre">theta_1(9)</span></code> is an array storing nine real numbers for the layer plane angles at the nodes of this element.
+For simplification, if the ply orientation can be considered as uniform for this element, <code class="docutils literal notranslate"><span class="pre">theta_1(1)</span></code> stores the layer plane angle and <code class="docutils literal notranslate"><span class="pre">theta_1(2)</span></code> = <span class="math notranslate nohighlight">\(540^{\circ}\)</span>, and all the rest can be zeros or other real numbers because they do not enter the calculation.
+If the element has fewer than nine nodes, zeros are to be input for the corresponding missing nodes, as in the case for connectivity.
+Although the arrangement of <code class="docutils literal notranslate"><span class="pre">elem_no</span></code> is not necessary to be consecutive, every element starting from 1 to <code class="docutils literal notranslate"><span class="pre">nelem</span></code> should be present.
+For isotropic materials, neither <code class="docutils literal notranslate"><span class="pre">theta_3</span></code> nor <code class="docutils literal notranslate"><span class="pre">theta_1(9)</span></code> will enter the calculations.</p>
+<h2 id="materials-and-layers">Materials and layers<a class="headerlink" href="#materials-and-layers" title="Link to this heading">¶</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">format_flag</span></code> = 1, that is, if the new format is used, the next <code class="docutils literal notranslate"><span class="pre">nlayer</span></code> lines define the layers used in the section.
+They are arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">layer_id</span>  <span class="n">mate_type</span>  <span class="n">theta_3</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">layer_id</span></code> is an integer denoting the identification number for each layer, <code class="docutils literal notranslate"><span class="pre">mate_type</span></code> is an integer denoting the material type used in the layer, and <code class="docutils literal notranslate"><span class="pre">theta_3</span></code> is a real number denoting the layup orientation.
+For example, if layer 1 is made of material 1 and having <span class="math notranslate nohighlight">\(−15^{\circ}\)</span> layup, we will provide the information as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">1</span> <span class="pre">−15.0</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">damping_flag</span></code> is 1, a damping coefficient for each layer is also needed to input right after <code class="docutils literal notranslate"><span class="pre">theta_3</span></code>.
+In others words, the input should be arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">layer_id</span>  <span class="n">mate_type</span>  <span class="n">theta_3</span>  <span class="n">damping_layer</span>
+</code></pre></div>
+</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">damping_layer</span></code> indicating the damping coefficient for the layer.</p>
+<p>The next <code class="docutils literal notranslate"><span class="pre">nmate</span></code> blocks defines the material properties.
+They are arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">mat_id</span>  <span class="n">orth</span>
+<span class="n">const1</span>  <span class="n">const2</span>  <span class="o">....</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">mat_id</span></code> is the number of material type, <code class="docutils literal notranslate"><span class="pre">orth</span></code> is the flag to indicate whether the material is isotropic (0), orthotropic (1) or general anisotropic (2).
+The rest are material constants.</p>
+<p>For isotropic materials, <code class="docutils literal notranslate"><span class="pre">orth</span></code> is 0, if <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is 0, there are 3 constants arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">E</span>  <span class="n">nu</span>
+<span class="n">rho</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">E</span></code> is the Young’s modulus, <code class="docutils literal notranslate"><span class="pre">nu</span></code> is the Poisson’s ratio, and <code class="docutils literal notranslate"><span class="pre">rho</span></code> is the density of the material.
+Poisson’s ratio must be greater than -1.0 and less than 0.5 for isotropic materials, although VABS allows users to input values that are very close to those limits.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is 3 and <code class="docutils literal notranslate"><span class="pre">orth</span></code> is 0, and there are 4 constants arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">E</span>  <span class="n">nu</span>
+<span class="n">rho</span>
+<span class="n">alpha</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is the coefficient of thermal expansion (CTE).</p>
+<p>For orthotropic materials, <code class="docutils literal notranslate"><span class="pre">orth</span></code> is 1, if <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is 0, there are 10 constants arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">E1</span>  <span class="n">E2</span>  <span class="n">E3</span>
+<span class="n">G12</span>  <span class="n">G13</span>  <span class="n">G23</span>
+<span class="n">nu12</span>  <span class="n">nu13</span>  <span class="n">nu23</span>
+<span class="n">rho</span>
+</code></pre></div>
+</div>
+<p>including the Young’s moduli (<code class="docutils literal notranslate"><span class="pre">E1</span></code>, <code class="docutils literal notranslate"><span class="pre">E2</span></code>, and <code class="docutils literal notranslate"><span class="pre">E3</span></code>), the shear moduli (<code class="docutils literal notranslate"><span class="pre">G12</span></code>, <code class="docutils literal notranslate"><span class="pre">G13</span></code>, and <code class="docutils literal notranslate"><span class="pre">G23</span></code>), the Poisson’s ratios (<code class="docutils literal notranslate"><span class="pre">nu12</span></code>, <code class="docutils literal notranslate"><span class="pre">nu13</span></code>, and <code class="docutils literal notranslate"><span class="pre">nu23</span></code>), and the mass density (<code class="docutils literal notranslate"><span class="pre">rho</span></code>).
+The convention of values is such that these values will be used to form the following the Hooke’s law for composite materials:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{Bmatrix}
+\varepsilon_{11} \\
+2\varepsilon_{12} \\
+2\varepsilon_{13} \\
+\varepsilon_{22} \\
+2\varepsilon_{23} \\
+\varepsilon_{33}
+\end{Bmatrix} =
+\begin{bmatrix}
+\frac{1}{E_1} &amp; 0 &amp; 0 &amp; -\frac{\nu_{12}}{E_1} &amp; 0 &amp; -\frac{\nu_{13}}{E_1} \\
+0 &amp; \frac{1}{G_{12}} &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{1}{G_{13}} &amp; 0 &amp; 0 &amp; 0 \\
+-\frac{\nu_{12}}{E_1} &amp; 0 &amp; 0 &amp; \frac{1}{E_2} &amp; 0 &amp; -\frac{\nu_{23}}{E_2} \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{G_{23}} &amp; 0 \\
+-\frac{\nu_{13}}{E_1} &amp; 0 &amp; 0 &amp; -\frac{\nu_{23}}{E_2} &amp; 0 &amp; \frac{1}{E_3}
+\end{bmatrix}
+\begin{Bmatrix}
+\sigma_{11} \\
+\sigma_{12} \\
+\sigma_{13} \\
+\sigma_{22} \\
+\sigma_{23} \\
+\sigma_{33}
+\end{Bmatrix}
+\end{split}\]</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is 3 and <code class="docutils literal notranslate"><span class="pre">orth</span></code> is 1, and there are 13 constants arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">E1</span>  <span class="n">E2</span>  <span class="n">E3</span>
+<span class="n">G12</span>  <span class="n">G13</span>  <span class="n">G23</span>
+<span class="n">nu12</span>  <span class="n">nu13</span>  <span class="n">nu23</span>
+<span class="n">rho</span>
+<span class="n">alpha11</span>  <span class="n">alpha22</span>  <span class="n">alpha33</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">alpha11</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha22</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha33</span></code> are the CTEs along three directions.</p>
+<p>For general anisotropic materials, <code class="docutils literal notranslate"><span class="pre">orth</span></code> is 2, if <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is 0, there are 22 constants arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">c11</span> <span class="n">c12</span> <span class="n">c13</span> <span class="n">c14</span> <span class="n">c15</span> <span class="n">c16</span>
+    <span class="n">c22</span> <span class="n">c23</span> <span class="n">c24</span> <span class="n">c25</span> <span class="n">c26</span>
+        <span class="n">c33</span> <span class="n">c34</span> <span class="n">c35</span> <span class="n">c36</span>
+            <span class="n">c44</span> <span class="n">c45</span> <span class="n">c46</span>
+                <span class="n">c55</span> <span class="n">c56</span>
+                    <span class="n">c66</span>
+                    <span class="n">rho</span>
+</code></pre></div>
+</div>
+<p>These values are defined using the following Hooke’s law:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{Bmatrix}
+\sigma_{11} \\
+\sigma_{12} \\
+\sigma_{13} \\
+\sigma_{22} \\
+\sigma_{23} \\
+\sigma_{33}
+\end{Bmatrix} =
+\begin{bmatrix}
+c_{11} &amp; c_{12} &amp; c_{13} &amp; c_{14} &amp; c_{15} &amp; c_{16} \\
+c_{12} &amp; c_{22} &amp; c_{23} &amp; c_{24} &amp; c_{25} &amp; c_{26} \\
+c_{13} &amp; c_{23} &amp; c_{33} &amp; c_{34} &amp; c_{35} &amp; c_{36} \\
+c_{14} &amp; c_{24} &amp; c_{34} &amp; c_{44} &amp; c_{45} &amp; c_{46} \\
+c_{15} &amp; c_{25} &amp; c_{35} &amp; c_{45} &amp; c_{55} &amp; c_{56} \\
+c_{16} &amp; c_{26} &amp; c_{36} &amp; c_{46} &amp; c_{56} &amp; c_{66}
+\end{bmatrix}
+\begin{Bmatrix}
+\varepsilon_{11} \\
+2\varepsilon_{12} \\
+2\varepsilon_{13} \\
+\varepsilon_{22} \\
+2\varepsilon_{23} \\
+\varepsilon_{33}
+\end{Bmatrix}
+\end{split}\]</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is 3 and <code class="docutils literal notranslate"><span class="pre">orth</span></code> is 2, there are 28 constants arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">c11</span> <span class="n">c12</span> <span class="n">c13</span> <span class="n">c14</span> <span class="n">c15</span> <span class="n">c16</span>
+    <span class="n">c22</span> <span class="n">c23</span> <span class="n">c24</span> <span class="n">c25</span> <span class="n">c26</span>
+        <span class="n">c33</span> <span class="n">c34</span> <span class="n">c35</span> <span class="n">c36</span>
+            <span class="n">c44</span> <span class="n">c45</span> <span class="n">c46</span>
+                <span class="n">c55</span> <span class="n">c56</span>
+                    <span class="n">c66</span>
+                    <span class="n">rho</span>
+<span class="n">alpha11</span>  <span class="mi">2</span><span class="n">alpha12</span>  <span class="mi">2</span><span class="n">alpha13</span>  <span class="n">alpha22</span>  <span class="mi">2</span><span class="n">alpha23</span>  <span class="n">alpha33</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">alphaij</span></code> , with i = 1, 2, 3 and j = 1, 2, 3, are the components of the second-order CTE tensor.
+CTEs corresponding to the shear strains are multiplied by two because the engineering shear strains are twice of the corresponding tensorial shear strains.
+The material constants are expressed in the material coordinate system (see <a class="reference internal" href="../convention.html#fig-local-coord-sys"><span class="std std-numref">Figure 4</span></a>).
+If the material properties are given in a different coordinate system, or the arrangement of stresses and strains are different from what VABS uses, a proper transformation of the material properties is needed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">damping_flag</span></code> is 1, a damping coefficient is input on the very next line following the density input.
+For example, if <code class="docutils literal notranslate"><span class="pre">orth</span></code>=0 and <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code>=3 (thermoelastic analysis with isotropic materials), the material constants are arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">E</span> <span class="n">nu</span>
+<span class="n">rho</span>
+<span class="n">gamma</span>
+<span class="n">alpha</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">gamma</span></code> is a scalar representing the material damping property.
+It is noted that the damping coefficients for each layer and for each material are additive.
+In other words, the total damping coefficient used to scale the stiffness-related matrices is <code class="docutils literal notranslate"><span class="pre">damping_layer</span></code>+<code class="docutils literal notranslate"><span class="pre">gamma</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">thermal_flag</span></code> is equal to 3, we also need to provide the following <code class="docutils literal notranslate"><span class="pre">nnode</span></code> lines for temperature for each node arranged as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">node_no</span>  <span class="n">T</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">node_no</span></code> is an integer representing the unique number assigned to each node and <code class="docutils literal notranslate"><span class="pre">T</span></code> is a real number describing the temperature of the node.
+These temperature values can be calculated either from a 3D heat conduction analysis or using VABS Conduction, which is a generalization of the VABS approach for heat conduction analysis.
+Although the arrangement of <code class="docutils literal notranslate"><span class="pre">node_no</span></code> is not necessary to be consecutive, every node starting from 1 to <code class="docutils literal notranslate"><span class="pre">nnode</span></code> should be present.</p>
+<p>Now, we have prepared all the inputs necessary for performing the homogenization run to compute the inertial properties and structural properties of the cross-section.
+That is, when <code class="docutils literal notranslate"><span class="pre">analysis</span></code> in Section [6] does not exist.</p>
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Inputs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Inputs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="global.html" class="md-footer__link md-footer__link--next" aria-label="Next: Dehomogenization Input File" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Dehomogenization Input File
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2025, Wenbin Yu.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    7.4.7.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+      
+        <script src="../../_static/sphinx_immaterial_theme.f9d9eeeb247ace16c.min.js?v=8ec58cb5"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script id="MathJax-script" src="../../_static/mathjax/tex-mml-chtml.js?v=cadf963e"></script>
+    
+  </body>
+</html>

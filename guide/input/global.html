@@ -1,0 +1,646 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>Dehomogenization Input File - VABS  documentation</title>
+      
+    
+    
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../../_static/sphinx_immaterial_theme.930bea4bcf70699cc.min.css?v=c6f00d5f" />
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="VABS  documentation" class="md-header__button md-logo" aria-label="VABS  documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VABS  documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dehomogenization Input File
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="VABS  documentation" class="md-nav__button md-logo" aria-label="VABS  documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    VABS  documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro.html" class="md-nav__link">
+        <span class="md-ellipsis">Introduction</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install.html" class="md-nav__link">
+        <span class="md-ellipsis">Installation</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run.html" class="md-nav__link">
+        <span class="md-ellipsis">Execution</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../index.html"><span class="md-ellipsis">Guide</span></a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Guide</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convention.html" class="md-nav__link">
+        <span class="md-ellipsis">Conventions</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html"><span class="md-ellipsis">Inputs</span></a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Inputs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Inputs</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="main.html" class="md-nav__link">
+        <span class="md-ellipsis">Homogenization Input File</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">Dehomogenization Input File</span>
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ufc.html" class="md-nav__link">
+        <span class="md-ellipsis">User-<wbr>defined Failure Criterion</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Outputs</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog.html" class="md-nav__link">
+        <span class="md-ellipsis">Changelog</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/bib.html" class="md-nav__link">
+        <span class="md-ellipsis">References</span>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                  
+
+
+<h1 id="dehomogenization-input-file">Dehomogenization Input File<a class="headerlink" href="#dehomogenization-input-file" title="Link to this heading">¶</a></h1>
+<p>If <code class="docutils literal notranslate"><span class="pre">analysis</span></code> in Section <a class="reference internal" href="#page-10-1"><span class="xref myst">6</span></a> is equal to 1,2, 3, users should provide additional information in the dehomogenization input file for VABS to perform a dehomogenization analysis.
+A corresponding homogenization analysis must be run before carrying out the dehomogenization analysis.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">analysis</span></code> is equal to 3, VABS will perform failure analysis of the cross-section.
+Strength properties for each material must be provided in the dehomogenization input file.
+Strength properties for each material include a failure criterion and corresponding strength constants.
+Two lines will be inserted and the inputs needed for failure analyses should be arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">failure_criterion</span>  <span class="n">num_of_constants</span>
+<span class="n">const1</span>  <span class="n">const2</span>  <span class="n">const3</span>  <span class="o">...</span>
+</code></pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is an integer identifier for the failure criterion.
+<code class="docutils literal notranslate"><span class="pre">num_of_constants</span></code> indicates the number of strength constants needed for the corresponding failure criterion.
+<code class="docutils literal notranslate"><span class="pre">const1</span>&#160; <span class="pre">const2</span>&#160; <span class="pre">const3</span>&#160; <span class="pre">...</span></code> are the corresponding strength constants.
+It is noted that this block of data should be corresponding to the material block in the homogenization input file.
+In other words, for each material with mat id, we need to provide such information.</p>
+<p><code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> can be equal to 1, 2, 3, 4, 5, and another number greater than 10.
+For isotropic material, 1 is max principal stress criterion, 2 is max principal strain criterion, 3 is max shear stress criterion (also commonly called Tresca criterion), 4 max shear strain criterion, and 5 is Mises criterion.
+For anisotropic materials, 1 is max stress criterion for anisotropic materials, 2 is max strain criterion for anisotropic materials, 3 is Tsai-Hill criterion, 4 is Tsai-Wu criterion and 5 is Hashin criterion.
+11 and larger indicates a user-defined failure criterion.
+It is assumed that the number of strength constants will not be greater than 9 for a material.
+If the material is isotropic, the failure criterion and corresponding strength constants are defined as follows:</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 1, the max principal stress criterion is used and two strength constants are needed: one for tensile strength (<span class="math notranslate nohighlight">\(X\)</span>) and one for compressive strength (<span class="math notranslate nohighlight">\(X^′\)</span> ), arranged as <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(X^′\)</span> .</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 2, the max principal strain criterion is used and two strength constants in terms of strains are needed: one for tensile strength (<span class="math notranslate nohighlight">\(X_\varepsilon\)</span>) and one for compressive strength (<span class="math notranslate nohighlight">\(X^′_{\varepsilon}\)</span>), arranged as <span class="math notranslate nohighlight">\(X_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(X^′_\varepsilon\)</span>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 3, the max shear stress criterion (aka Tresca criterion) is used and one shear strength constant (<span class="math notranslate nohighlight">\(S\)</span>) is needed.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 4, the max shear strain criterion is used and one shear strength constant in terms of strains (<span class="math notranslate nohighlight">\(S_\varepsilon\)</span>) is needed.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 5, the Mises criterion is used and one strength constant (<span class="math notranslate nohighlight">\(X\)</span>) is needed.</p></li>
+</ul>
+<p>If the material is not isotropic (transversely isotropic, orthotropic, or general anisotropic), the failure criteria and corresponding strength constants are defined as follows:</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 1, the max stress criterion is used and nine strength constants are needed: tensile strengths (<span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(Z\)</span>) in three directions, compressive strengths (<span class="math notranslate nohighlight">\(X^′\)</span> , <span class="math notranslate nohighlight">\(Y^′\)</span> , <span class="math notranslate nohighlight">\(Z^′\)</span> ) in three directions, and shear strengths (<span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(S\)</span>) in three principal planes, arranged as <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(X^′\)</span>, <span class="math notranslate nohighlight">\(Y^′\)</span>, <span class="math notranslate nohighlight">\(Z^′\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 2, the max strain criterion is used and nine strength constants in terms of strains are needed: tensile strengths (<span class="math notranslate nohighlight">\(X_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Y_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Z_\varepsilon\)</span>) in three directions, compressive strengths (<span class="math notranslate nohighlight">\(X^′ _\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Y^′_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Z^′_\varepsilon\)</span>) in three directions, and shear strengths (<span class="math notranslate nohighlight">\(R_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(T_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(S_\varepsilon\)</span>) in three principal planes, arranged as <span class="math notranslate nohighlight">\(X_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Y_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Z_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(X^′_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Y^′_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(Z^′_\varepsilon\)</span>, <span class="math notranslate nohighlight">\(R\varepsilon\)</span>, <span class="math notranslate nohighlight">\(T\varepsilon\)</span>, <span class="math notranslate nohighlight">\(S\varepsilon\)</span>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 3, the Tsai-Hill criterion is used and six strength constants are needed: normal strengths in three directions and shear strengths in three principal planes, arranged as <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 4, the Tsai-Wu criterion is used and nine strength constants are needed: tensile strengths (X, Y, Z), compressive strengths (<span class="math notranslate nohighlight">\(X^′\)</span>, <span class="math notranslate nohighlight">\(Y^′\)</span>, <span class="math notranslate nohighlight">\(Z^′\)</span>) in three directions, and shear strengths (<span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(S\)</span>) in three principal planes, arranged as <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(X^′\)</span>, <span class="math notranslate nohighlight">\(Y^′\)</span>, <span class="math notranslate nohighlight">\(Z^′\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">failure_criterion</span></code> is 5, the Hashin criterion is used and six strength constants are needed: tensile strengths (<span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>), compressive strengths (<span class="math notranslate nohighlight">\(X^′\)</span>, <span class="math notranslate nohighlight">\(Y^′\)</span>) in two directions, and shear strengths (<span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(S\)</span>) in two principal planes, arranged as <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(X^′\)</span>, <span class="math notranslate nohighlight">\(Y^′\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+</ul>
+<p>It is noted that for failure analyses, general anisotropic materials are also approximated using orthotropic materials due to limited number of strength constants.
+In VABS, both the tensile strengths and compressive strengths are expressed using positive numbers.
+In other words, in the uniaxial compressive test along <span class="math notranslate nohighlight">\(y_1\)</span> direction, <span class="math notranslate nohighlight">\(\sigma_{11}=−X^′\)</span> when material fails.</p>
+<p>The above block of data for strength properties for each material only needed if <code class="docutils literal notranslate"><span class="pre">analysis</span></code>=3.
+If <code class="docutils literal notranslate"><span class="pre">analysis</span></code>=1 or 2, the strength properties are not needed and should not be provided in the dehomogenization input file.
+Only the global beam responses as explained below should be stored in the dehomogenization input file.</p>
+<p>The rest of inputs in the dehomogenization input file contains the global beam responses obtained from the 1D global beam analysis.
+To carry out a dehomogenization analysis based on the classical model, VABS requires the following data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">u1</span>  <span class="n">u2</span>  <span class="n">u3</span>
+<span class="n">C11</span>  <span class="n">C12</span>  <span class="n">C13</span>
+<span class="n">C21</span>  <span class="n">C22</span>  <span class="n">C23</span>
+<span class="n">C31</span>  <span class="n">C32</span>  <span class="n">C33</span>
+<span class="n">F1</span>  <span class="n">M1</span>  <span class="n">M2</span>  <span class="n">M3</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">u1</span></code>, <code class="docutils literal notranslate"><span class="pre">u2</span></code>, and <code class="docutils literal notranslate"><span class="pre">u3</span></code> are the 1D beam displacements along <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span>, respectively.
+The matrix <code class="docutils literal notranslate"><span class="pre">Cij</span></code>, with i = 1, 2, 3 and j = 1, 2, 3, is the direction cosine matrix defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{B}_{i} = C_{i1}\mathbf{b}_{1} + C_{i2}\mathbf{b}_{2} + C_{i3}\mathbf{b}_{3} \text{    with } i = 1, 2, 3
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(B_1\)</span>, <span class="math notranslate nohighlight">\(B_2\)</span>, and <span class="math notranslate nohighlight">\(B_3\)</span> are the base vectors of the deformed beam and <span class="math notranslate nohighlight">\(b_1\)</span>, <span class="math notranslate nohighlight">\(b_2\)</span>, and <span class="math notranslate nohighlight">\(b_3\)</span> are the base vectors of the undeformed beam.
+Details of this definition can be found in Ref. <a class="reference internal" href="#page-24-2"><span class="xref myst">[7]</span></a>.
+<code class="docutils literal notranslate"><span class="pre">ui</span></code> and <code class="docutils literal notranslate"><span class="pre">Cij</span></code> are needed only for recovering 3D displacements.
+If the user is not interested in 3D displacements, these values can be arbitrary real numbers.
+<code class="docutils literal notranslate"><span class="pre">F1</span></code> is the axial force, <code class="docutils literal notranslate"><span class="pre">M1</span></code> is the torque, <code class="docutils literal notranslate"><span class="pre">M2</span></code> is the bending moment around <span class="math notranslate nohighlight">\(x_2\)</span>, and <code class="docutils literal notranslate"><span class="pre">M3</span></code> is the bending moment around <span class="math notranslate nohighlight">\(x_3\)</span>.
+The sectional stress resultants are needed for computing 3D stresses/strains/failure indexes/strength ratios within the cross-section.
+For example, if the user wants to compute these quantities under 1 unit tensile axial force along with 1 unit bending moment around <span class="math notranslate nohighlight">\(x_2\)</span>, the inputs can be arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>
+<span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>
+<span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span>
+<span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">1</span>
+<span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span>
+</code></pre></div>
+</div>
+<p>To perform dehomogenization for multiple load cases, the user needs to insert corresponding lines of <code class="docutils literal notranslate"><span class="pre">F1</span></code>, <code class="docutils literal notranslate"><span class="pre">M1</span></code>, <code class="docutils literal notranslate"><span class="pre">M2</span></code>, <code class="docutils literal notranslate"><span class="pre">M3</span></code> after the end of this block.
+For example, to perform dehomogenization for two more load cases with <code class="docutils literal notranslate"><span class="pre">F1</span></code> = 2, <code class="docutils literal notranslate"><span class="pre">M1</span></code> = 2, <code class="docutils literal notranslate"><span class="pre">M2</span></code> = <code class="docutils literal notranslate"><span class="pre">M3</span></code> = 0 and <code class="docutils literal notranslate"><span class="pre">F1</span></code> = 2, <code class="docutils literal notranslate"><span class="pre">M1</span></code> = 3, <code class="docutils literal notranslate"><span class="pre">M2</span></code> = 4, <code class="docutils literal notranslate"><span class="pre">M3</span></code> = 5, we must provide the following inputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>
+<span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>
+<span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span>
+<span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">1</span>
+<span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span>
+<span class="mi">2</span>  <span class="mi">2</span>  <span class="mi">0</span>  <span class="mi">0</span>
+<span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>
+</code></pre></div>
+</div>
+<p>To carry out a dehomogenization analysis based on the Timoshenko model, VABS requires the following data:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span><code>u1  u2  u3
+C11  C12  C13
+C21  C22  C23
+C31  C32  C33
+F1  M1  M2  M3
+F2  F3
+f1  f2  f3  m1  m2  m3
+f1&#39;  f2&#39;  f3&#39;  m1&#39;  m2&#39;  m3&#39;
+f1&#39;&#39;  f2&#39;&#39;  f3&#39;&#39;  m1&#39;&#39;  m2&#39;&#39;  m3&#39;&#39;
+f1&#39;&#39;&#39;  f2&#39;&#39;&#39;  f3&#39;&#39;&#39;  m1&#39;&#39;&#39;  m2&#39;&#39;&#39;  m3&#39;&#39;&#39;
+</code></pre></div>
+</div>
+<p>where the additional data <code class="docutils literal notranslate"><span class="pre">F2</span></code> and <code class="docutils literal notranslate"><span class="pre">F3</span></code> are transverse shear forces along <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>, respectively.
+<code class="docutils literal notranslate"><span class="pre">f1</span></code>, <code class="docutils literal notranslate"><span class="pre">f2</span></code>, <code class="docutils literal notranslate"><span class="pre">f3</span></code> are distributed forces (including both applied forces and inertial forces) per unit span along <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span> respectively.
+<code class="docutils literal notranslate"><span class="pre">m1</span></code>, <code class="docutils literal notranslate"><span class="pre">m2</span></code>, <code class="docutils literal notranslate"><span class="pre">m3</span></code> are distributed moments (including both applied and inertial moments) per unit span along <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span> respectively.
+The prime denotes derivative with respect to beam axis, that is <span class="math notranslate nohighlight">\(()^{'}=\partial/\partial x_1\)</span>, <span class="math notranslate nohighlight">\(()^{''} = \partial^2/\partial x_1^2\)</span>, and <span class="math notranslate nohighlight">\(()^{'''} = \partial^3/\partial x_1^3\)</span>.
+If <code class="docutils literal notranslate"><span class="pre">nload</span></code> &gt; 1, at the end of the above data block, we need to append two lines (one line for <span class="math notranslate nohighlight">\(F_1\)</span>, <span class="math notranslate nohighlight">\(M_1\)</span>, <span class="math notranslate nohighlight">\(M_2\)</span>, <span class="math notranslate nohighlight">\(M_3\)</span> and one line for <span class="math notranslate nohighlight">\(F_2\)</span>, <span class="math notranslate nohighlight">\(F_3\)</span>) for each load case.</p>
+<p>To carry out a dehomogenization analysis based on the Vlasov model, VABS requires the following data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">u1</span>  <span class="n">u2</span>  <span class="n">u3</span>
+<span class="n">C11</span>  <span class="n">C12</span>  <span class="n">C13</span>
+<span class="n">C21</span>  <span class="n">C22</span>  <span class="n">C23</span>
+<span class="n">C31</span>  <span class="n">C32</span>  <span class="n">C33</span>
+<span class="n">gamma11</span>  <span class="n">kappa1</span>  <span class="n">kappa2</span>  <span class="n">kappa3</span>  <span class="n">kappa1</span><span class="s1">&#39;  kappa1&#39;&#39;  kappa&#39;&#39;&#39;</span>
+</code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">gamma11</span></code> is the beam axial strain, <code class="docutils literal notranslate"><span class="pre">kappa1</span></code> is the twist , <code class="docutils literal notranslate"><span class="pre">kappa2</span></code> and <code class="docutils literal notranslate"><span class="pre">kappa3</span></code> are the curvatures around <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> respectively.</p>
+<p>It is noted that the global behavior needed for dehomogenization analyses should not violate the small strain assumption.
+Otherwise, you might get some unexpected results.
+For example, if your transverse shear stiffness is 2.5 N, then inputting a shear force resultant of 1 N is too large as the shear strain will be about 0.4, which cannot be considered as small, the basic assumption of the VABS theory.</p>
+<p>Both input files, <code class="docutils literal notranslate"><span class="pre">input_file_name</span></code> and <code class="docutils literal notranslate"><span class="pre">input_file_name.glb</span></code>, should be ended with a blank line to avoid any possible incompatibility of different computer operating systems.
+The input file can be given any name as long as the total number of the characters of the name including extension is not more than 256.
+For the convenience of the user to identify mistakes in the input file, all the inputs are echoed in the file named <code class="docutils literal notranslate"><span class="pre">input_file_name.ech</span></code>.
+Error messages are also written at the end of <code class="docutils literal notranslate"><span class="pre">input_file_name.ech</span></code> and on the output screen.</p>
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="main.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Homogenization Input File" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Homogenization Input File
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="ufc.html" class="md-footer__link md-footer__link--next" aria-label="Next: User-defined Failure Criterion" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              User-defined Failure Criterion
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2025, Wenbin Yu.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    7.4.7.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+      
+        <script src="../../_static/sphinx_immaterial_theme.f9d9eeeb247ace16c.min.js?v=8ec58cb5"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script id="MathJax-script" src="../../_static/mathjax/tex-mml-chtml.js?v=cadf963e"></script>
+    
+  </body>
+</html>

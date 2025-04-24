@@ -1,0 +1,726 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>Changelog - VABS  documentation</title>
+      
+    
+    
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="_static/sphinx_immaterial_theme.930bea4bcf70699cc.min.css?v=c6f00d5f" />
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-new-in-vabs-4-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="VABS  documentation" class="md-header__button md-logo" aria-label="VABS  documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VABS  documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="VABS  documentation" class="md-nav__button md-logo" aria-label="VABS  documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    VABS  documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intro.html" class="md-nav__link">
+        <span class="md-ellipsis">Introduction</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        <span class="md-ellipsis">Installation</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="run.html" class="md-nav__link">
+        <span class="md-ellipsis">Execution</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guide/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Guide</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">Changelog</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">Changelog</span>
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-4-1" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 4.<wbr>1</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-4-0" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 4.<wbr>0</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-9" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>9</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-8" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>8</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-7" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>7</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-6" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>6</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-5" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>5</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-4" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>4</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-3" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>3</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vabs-iii-and-what-is-new" class="md-nav__link">
+    <span class="md-ellipsis">VABS III and What is New</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vabs-ii" class="md-nav__link">
+    <span class="md-ellipsis">VABS II</span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ref/bib.html" class="md-nav__link">
+        <span class="md-ellipsis">References</span>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-4-1" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 4.<wbr>1</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-4-0" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 4.<wbr>0</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-9" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>9</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-8" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>8</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-7" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>7</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-6" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>6</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-5" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>5</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-4" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>4</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-new-in-vabs-3-3" class="md-nav__link">
+    <span class="md-ellipsis">What is New in VABS 3.<wbr>3</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vabs-iii-and-what-is-new" class="md-nav__link">
+    <span class="md-ellipsis">VABS III and What is New</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vabs-ii" class="md-nav__link">
+    <span class="md-ellipsis">VABS II</span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                  
+
+
+<h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<h2 id="what-is-new-in-vabs-4-1">What is New in VABS 4.1<a class="headerlink" href="#what-is-new-in-vabs-4-1" title="Link to this heading">¶</a></h2>
+<p>The new capabilities of VABS 4.1 are:</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>Perform dehomogenization for multiple load cases in terms of forces and moments corresponding to the Euler-Bernoulli model and the Timoshenko model.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Output the modes and corresponding ratios for failure criteria with identifiable modes such as failure criterion 1, 2, 5.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Provide documentation for the user-define failure criterion capability.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Enable users to suppress the output of other stress/strain files except the average stresses/strains for each element in the ele file.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Remove damping input for no damping analysis.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p>Output the classical stiffness matrix and compliance matrix at the shear center.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>Enable comment lines in the inputs for better readability.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="8">
+<li><p>Output the time and date the code is compiled and released.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="9">
+<li><p>Provide simple instructions when VABS, VABS -h, or VABS -help is issued in the command line.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="10">
+<li><p>Simplify the installation process without administrator privilege.</p></li>
+</ol>
+</li>
+</ul>
+<h2 id="what-is-new-in-vabs-4-0">What is New in VABS 4.0<a class="headerlink" href="#what-is-new-in-vabs-4-0" title="Link to this heading">¶</a></h2>
+<p>The new capabilities of VABS 4.0 are:</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>Compute pointwise distributions of failure indexes and strength ratios over the cross-section under a given load.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Compute the safety margin (the minimum strength ratio among all elements) of the crosssection under a given load.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Output the nodal stress/strain values according to the original numbering of the finite element nodes.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Output the complete set of engineering properties commonly used in conventional beam analysis including extension stiffness (EA), torsional stiffness (GJ), principal bending stiffnesses (EI22, EI33), principal shear stiffness (GA22, GA33), tension center, shear center, principal inertial axes, principal bending axes, and principal shear axes.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Since VABS 4.0, we change the executable name to VABS.</p></li>
+</ol>
+</li>
+</ul>
+<h2 id="what-is-new-in-vabs-3-9">What is New in VABS 3.9<a class="headerlink" href="#what-is-new-in-vabs-3-9" title="Link to this heading">¶</a></h2>
+<p>The main new feature of VABS 3.9 is prediction of sectional damping matrix based on the lamina damping coefficients. VABS 3.9 can also output the cross-sectional area. Another feature is that VABS 3.9 is now distributed as a single library.</p>
+<h2 id="what-is-new-in-vabs-3-8">What is New in VABS 3.8<a class="headerlink" href="#what-is-new-in-vabs-3-8" title="Link to this heading">¶</a></h2>
+<p>The main new feature of VABS 3.8 is a new license manager to allow more versatile license mechanisms including node locked licenses and floating licenses. The user does not have to put the license in the same folder as the input file as it was the case for previous versions. Instead, the user can use a node locked license file stored in the same folder as the VABS executable or obtain a floating license from a license server.</p>
+<p>Since VABS 3.8, we provide free academic licenses for students and professors to use the full version of VABS for teaching and academic research.</p>
+<p>Since VABS 3.8, we provide both Linux and Windows versions.</p>
+<h2 id="what-is-new-in-vabs-3-7">What is New in VABS 3.7<a class="headerlink" href="#what-is-new-in-vabs-3-7" title="Link to this heading">¶</a></h2>
+<p>The main new feature of VABS 3.7 is to carry out the recovery up to the second order which provides a better prediction for the 3D recovered fields in comparison to known exact solutions.</p>
+<h2 id="what-is-new-in-vabs-3-6">What is New in VABS 3.6<a class="headerlink" href="#what-is-new-in-vabs-3-6" title="Link to this heading">¶</a></h2>
+<p>The main new feature of VABS 3.6 is to use an improved method for optimizing the numbering of finite element mesh. For large problems, it is much faster than the method used in previous versions. The most recent version of fortran compiler is used for compiling the code resulting in much faster recovery.</p>
+<h2 id="what-is-new-in-vabs-3-5">What is New in VABS 3.5<a class="headerlink" href="#what-is-new-in-vabs-3-5" title="Link to this heading">¶</a></h2>
+<p>The main new feature of VABS 3.5 is for oblique cross-sectional analysis, the inputs are given in the oblique cross-sectional system while in previous versions, the inputs are given in the normal crosssectional coordinates. Also starting VABS 3.5, users can use long names of input file, including spaces in the path and file names.</p>
+<h2 id="what-is-new-in-vabs-3-4">What is New in VABS 3.4<a class="headerlink" href="#what-is-new-in-vabs-3-4" title="Link to this heading">¶</a></h2>
+<p>The main new feature is expanding <sup>√</sup><sup>g</sup> in the modeling for initially curved/twisted beams. For some cases such a change made significant differences for obtaining first and second correction of the stiffness matrix due to initial curvature and twist. Such a change is verified using an initially curved strip for which an elasticity solution is obtainable. The input file for this case is isorectTrif2.sg. A 64-bit version of VABS is also available since VABS 3.4.</p>
+<h2 id="what-is-new-in-vabs-3-3">What is New in VABS 3.3<a class="headerlink" href="#what-is-new-in-vabs-3-3" title="Link to this heading">¶</a></h2>
+<p>The main new feature is introducing a new input format, and keeping the previous input format as optional. In the new format, the user only needs to provide one real number for θ<sup>1</sup> as few users take advantage of the nine real numbers for θ1, which is useful for elements with highly curved edges. In the new format, we introduce layer definition so that a layer type instead of material type is provided for each element. Each layer is defined through a unique combination of material type and layerup angle θ3. It is more economical than assigning θ<sup>3</sup> for each element, as what we have done in the previous format, because the number of layers usually is much less than the number of elements. These two changes reduce approximately 3/4 of real numbers needed for VABS inputs, saving space and time. These changes will also simplify the development of VABS preprocessors as it is easier to compute just one number for θ<sup>1</sup> for each element.</p>
+<h2 id="vabs-iii-and-what-is-new">VABS III and What is New<a class="headerlink" href="#vabs-iii-and-what-is-new" title="Link to this heading">¶</a></h2>
+<p>VABS was originally designed to run as a standalone code and its error handling, memory allocation/deallocation, and I/O were handled with this use in mind. However, in recent years, more and more users began to explore the possibility of using VABS in a design environment. This motivates the major upgrade of VABS to VABS III through restructuring the code.</p>
+<p>Since the first release of VABS III, a few users have asked the difference between VABS III and previous versions, in particular VABS 2.1.1 which was the last release and the code accompanying Prof. Hodges’ book.<a class="reference internal" href="#page-24-2"><span class="xref myst">7</span></a> Overall, VABS III is a much improved code in both accuracy and efficiency. The main difference can be described according to the following two aspects.</p>
+<ul class="simple">
+<li><p>As far as functionalities concerned, VABS III</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>Uses the correct constraints so that it can reproduce the 3D elasticity theory for isotropic prismatic beams. This change affects the warping functions, and affects all stiffness models except the classical one. Such a correction enables VABS to reproduce the 3D elasticity theory for isotropic prismatic beams and thus enables VABS to provide a better modeling for prismatic or initially curved/twisted composite beams (VABS 3.0).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Recovers 3D stress/strain fields at each node in addition to Gauss points. The recovered 3D stress/strain fields are expressed in both the beam coordinate system and the material coordinate system. VABS 2.1.1 only recovers 3D stress/strain fields at Gauss points expressed in the beam coordinate system. For visualization, nodal values are convenient. To apply failure criteria of composite materials, stresses/strains expressed in the material coordinate system are needed (VABS 3.0).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Handles isotropic, orthotropic, and anisotropic material differently. Previous versions treat all materials as orthotropic only and must take a total of 9 elastic constants. VABS III allows general anisotropic material with as many as 21 elastic constants and isotropic materials with as few as 2 elastic constants (VABS 3.0).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Can model hygrothermal effects of composite beams due to temperature and moisture changes. As a companion capability, VABS Conduction is developed to carry out a dimensional reduction for the 3D conduction problem. VABS Conduction can be requested separately (VABS 3.1).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Updates the transformation procedure into the Timoshenko model from the asymptotic energy. A new perturbation method is developed to capture the effects due to initial curvatures/twist during the transformation. The prediction for Timoshenko stiffness is generally improved, even for some prismatic beams (VABS 3.2).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p>Outputs the average of 3D stresses/strains within each element for convenience of postprocessing (VABS 3.2.2).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>Provides an option for recovering the 3D displacement/strain/stress fields based on the linear beam theory (VABS 3.2.4).</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>As far as the quality of the code is concerned, VABS III</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>Is restructured to change the error handling and error message handling, memory allocation and de-allocation, and I/O handling to facilitate its integration with other software environments (VABS 3.0).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Interprets and echoes all the input data for quicker identification of mistakes in the input file (VABS 3.0).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Is much faster than VABS 2.1.1 by modifying the mesh optimization algorithm and adopting a new approach to calculate the elemental finite element matrices (VABS 3.0).</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Uses dynamic link libraries (DLLs) to encapsulate the analysis capability so that VABS has true plug-n-play capability which is convenient for integration into other environments. Now VABS can be used both as a standalone application and two callable libraries. The two callable libraries and the corresponding manual for developers can be requested separately (VABS 3.0).</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Has more thorough and informative error handling (VABS 3.0).</p></li>
+</ol>
+<p>Quite a few bugs in VABS 2.1.1 have been corrected in VABS III and its later versions. One bug is associated with the modified linear solver. Because of this bug, for some very rare cases, VABS 2.1.1 provides some annoying couplings which are not supposed to be there. VABS 3.0 has no such anomaly. At least one bug related with the Trapeze effect inherited from the original VABS before 1998 has been corrected in VABS 3.0. A bug related with recovery is also corrected in VABS 3.2.3.</p>
+<p>Starting from VABS 3.0, an evaluation version of VABS is free for anybody who asks. It allows the user to evaluate the code for one month before obtaining a permanent license.</p>
+<h2 id="vabs-ii">VABS II<a class="headerlink" href="#vabs-ii" title="Link to this heading">¶</a></h2>
+<p>VABS II was released in June 2004, with the major enhancement to remove the need of asking the user to choose arbitrary point constraints and let the code determine the singularity and apply the corresponding constraints. Other improvements of VABS II include calculation of principal inertial axes, the mass matrix, and neutral axes, and a significant reduction of the computing time for large size problems.</p>
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="guide/output/dehomo.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dehomogenization Outputs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Dehomogenization Outputs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="ref/bib.html" class="md-footer__link md-footer__link--next" aria-label="Next: References" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              References
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2025, Wenbin Yu.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    7.4.7.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+      
+        <script src="_static/sphinx_immaterial_theme.f9d9eeeb247ace16c.min.js?v=8ec58cb5"></script>
+    
+  </body>
+</html>
